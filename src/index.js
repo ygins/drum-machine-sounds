@@ -21,7 +21,7 @@ app.get("/sound/:dir/:sound", (req, res)=>{
     res.status(400);
     res.end();
   }
-  const soundPath=path.join(__dirname, "..","samples",req.params.dir,req.params.sound+".mp3");
+  const soundPath=path.join(__dirname, "..","samples",req.params.dir,req.params.sound);
   fs.access(soundPath, err=>{
     if(err){
       res.status(404);
